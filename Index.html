@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .bio {
+            font-size: 0.6cm;
+        }
+    </style>
+
+</head>
+<script type="text/javascript">
+    function mousehandler(e) {
+        var myevent = (isNS) ? e : event;
+        var eventbutton = (isNS) ? myevent.which : myevent.button;
+        if ((eventbutton == 2) || (eventbutton == 3)) return false;
+    }
+    document.oncontextmenu = mischandler;
+    document.onmousedown = mousehandler;
+    document.onmouseup = mousehandler;
+    function disableCtrlKeyCombination(e) {
+        var forbiddenKeys = new Array("a", "s", "c", "x", "u");
+        var key;
+        var isCtrl;
+        if (window.event) {
+            key = window.event.keyCode;
+            //IE
+            if (window.event.ctrlKey)
+                isCtrl = true;
+            else
+                isCtrl = false;
+        }
+        else {
+            key = e.which;
+            //firefox
+            if (e.ctrlKey)
+                isCtrl = true;
+            else
+                isCtrl = false;
+        }
+        if (isCtrl) {
+            for (i = 0; i < forbiddenKeys.length; i++) {
+                //case-insensitive comparation
+                if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+</script>
+
+<body oncontextmenu="return false">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="/images/kisspng-computer-icons-user-profile-person-5abd85306ff7f7.0592226715223698404586.jpg"
+                        alt="Profile pciture" height="200" width="170">
+                </td>
+                <td class="bio">
+                    Hi,<br>I am Shubham,a devotee and passionate developer.
+
+                </td>
+            </tr>
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+    <hr size="4" noshade>
+
+    <h2><u>Educational Qualification</u></h2><br>
+    <div class="bio">
+
+        ➼ Secondary Education- <em>St Joseph's English Medium School </em> <strong> (2007-2018)</strong> <br>
+
+        ➼ Higher Secondary Education- <em>Bharati Bhawan School</em>
+        <strong>(2018-2020)</strong> <br>
+
+        ➼ BE CSE- <em>Chandigarh University</em> <strong>(2021-2025)</strong><br>
+
+    </div>
+    <hr size="4" noshade>
+
+    <h2><u>Skills</u></h2>
+    <div class="bio">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        HTML
+                    </td>
+                    <td>★★★☆☆</td>
+                    <td></td>
+                    <!-- <td></td> -->
+                    <td>
+                        CSS
+                    </td>
+                    <td>★★☆☆☆</td>
+                </tr>
+                <tr>
+                    <td>C++</td>
+                    <td>★★★★☆</td>
+                    <td></td>
+                    <td>Java</td>
+                    <td>★★★☆☆</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr size="3" noshade>
+    <h2><u>Certificates</u></h2>
+    <div class="bio">
+        <a class="lin" href="cert.html" style="color:black;text-decoration:none;">Click here to view my
+            certificates</a><br>
+        ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+
+    </div>
+</body>
+
+</html>
