@@ -16,7 +16,6 @@
 </head>
 <script type="text/javascript">
     function mousehandler(e) {
-        var myevent = (isNS) ? e : event;
         var eventbutton = (isNS) ? myevent.which : myevent.button;
         if ((eventbutton == 2) || (eventbutton == 3)) return false;
     }
@@ -27,6 +26,7 @@
         var forbiddenKeys = new Array("a", "s", "c", "x", "u");
         var key;
         var isCtrl;
+        var myevent = (isNS) ? e : event;
         if (window.event) {
             key = window.event.keyCode;
             //IE
